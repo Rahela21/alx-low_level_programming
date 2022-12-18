@@ -1,40 +1,28 @@
 #include "main.h"
-
 /**
- * times_table - Entry point
- * Description: prints a number in nine by nine table
+ * times_table - prints the 9 times table
  *
- * Return: void
+ * Return: returns nothing
  */
 void times_table(void)
 {
-	int row, col, product, tens, ones;
+	int digit, mult, result;
 
-	for (row = 0; row <= 9; row++)
+	for (digit = 0; digit <= 9; digit++)
 	{
-		for (col = 0; col <= 9; col++)
+		_putchar('0');
+
+		for (mult = 1; mult <= 9; mult++)
 		{
-			product = col * row;
-			tens = product / 10;
-			ones = product % 10;
-			if (col == 0)
-			{
-				_putchar('0');
-			}
-			else if (product < 10)
-			{
-				_putchar(',');
+			_putchar(',');
+			_putchar(' ');
+			result = digit * mult;
+			if (result <= 9)
 				_putchar(' ');
-				_putchar(' ');
-				_putchar(ones + '0');
-			}
 			else
-			{
-				_putchar(',');
-				_putchar(' ');
-				_putchar(tens + '0');
-				_putchar(ones + '0');
-			}
+				_putchar((result / 10) + '0');
+
+			_putchar((result % 10) + '0');
 		}
 		_putchar('\n');
 	}
