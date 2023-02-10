@@ -94,7 +94,7 @@ void print_class(unsigned char *e_ident)
 void print_data(unsigned char *e_ident)
 {
 	printf("  Data:                              ");
-	
+
 	switch (e_ident[EI_DATA])
 	{
 		case ELFDATANONE:
@@ -296,7 +296,7 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: `%s`: No such file\n", argv[1]);
 		exit(98);
 	}
-	
+
 	check_elf(header->e_ident);
 	printf("ELF Header:\n");
 	print_magic(header->e_ident);
